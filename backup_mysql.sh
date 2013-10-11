@@ -11,6 +11,11 @@ if [ ! -f $XCRED ]; then
   exit 1
 fi
 
+XMYSQLBACKUPACTIVE=$(cat $XCRED | grep XMYSQLBACKUPACTIVE | cut -d "=" -f2)
+if [ ! $XMYSQLBACKUPACTIVE == "YES" ]; then
+  exit 1
+fi
+
 XMYSQLUSER=$(cat $XCRED | grep XMYSQLUSER | cut -d "=" -f2)
 XMYSQLPWD=$(cat $XCRED | grep XMYSQLPWD | cut -d "=" -f2)
 XMYSQLHOST=$(cat $XCRED | grep XMYSQLHOST | cut -d "=" -f2)
