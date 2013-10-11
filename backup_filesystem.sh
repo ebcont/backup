@@ -16,7 +16,8 @@ if [ ! $XFSBACKUPACTIVE == "YES" ]; then
   exit 1
 fi
 
-XFILEPATH=$(cat $XCRED | grep XBACKUPPATH | cut -d "=" -f2)
+XBACKUPPATH=$(cat $XCRED | grep XBACKUPPATH | cut -d "=" -f2)
+XFILEPATH=$(cat $XCRED | grep XFILEPATH | cut -d "=" -f2)
 XDATE=$(date +"%Y%m%d")
 
 XCRON=$(grep backup_filesystem.sh /etc/crontab | wc -l)
