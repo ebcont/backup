@@ -26,7 +26,7 @@ XDATE=$(date +"%Y%m%d")
 XCRON=$(grep backup_mysql.sh /etc/crontab | wc -l)
 
 if [ $XCRON -eq 0 ]; then
-  echo "0 1 * * *	root	/root/bin/git/backup_mysql.sh >> /var/log/backup_mysql.log" >> /etc/crontab
+  echo "0 1 * * *	root	/root/bin/git/backup/backup_mysql.sh >> /var/log/backup_mysql.log" >> /etc/crontab
 fi
 
 mkdir -p $XBACKUPPATH
