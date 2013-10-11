@@ -29,7 +29,7 @@ fi
 mkdir -p $XBACKUPPATH
 
 # Make tar
-tar cvzf $XBACKUPPATH/$XDATE-fs.tgz $XFSPATH
+tar cvzf $XBACKUPPATH/$XDATE-fs.tgz $XFILEPATH
 
 # Delete files older than 2 days
 find $XBACKUPPATH/* -mtime +2 -exec rm {} \;
