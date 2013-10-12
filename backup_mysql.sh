@@ -40,8 +40,8 @@ tar cvzf $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.tgz $XBACKUPPATH/$XDATE-mysql-$
 # Delete SQL-file
 rm $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.sql
 
-# Delete files older than 2 days
-find $XBACKUPPATH/* -mtime +2 -exec rm {} \;
+# Delete files older than 1 days
+find $XBACKUPPATH/* -mtime +1 -exec rm {} \;
 
 
 echo "end mysql backup"
