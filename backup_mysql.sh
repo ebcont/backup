@@ -44,7 +44,7 @@ rm $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.sql
 find $XBACKUPPATH/* -mtime +1 -exec rm {} \;
 
 #this file is only needed to check for monitoring if backup is working - we will check the date of the file
-touch XBACKUPPATH/check_backup_mysql
+touch $XBACKUPPATH/check_backup_mysql
 
 echo "end mysql backup"
 date

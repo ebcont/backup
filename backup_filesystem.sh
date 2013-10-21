@@ -35,7 +35,7 @@ tar cvzf $XBACKUPPATH/$XDATE-fs.tgz $XFILEPATH
 find $XBACKUPPATH/* -mtime +1 -exec rm {} \;
 
 #this file is only needed to check for monitoring if backup is working - we will check the date of the file
-touch XBACKUPPATH/check_backup_filesystem
+touch $XBACKUPPATH/check_backup_filesystem
 
 echo "end filesystem backup"
 date
