@@ -32,7 +32,7 @@ fi
 mkdir -p $XBACKUPPATH
 
 # Dump database into SQL file
-mysqldump --user=$XMYSQLUSER --password=$XMYSQLPWD --host=$MYSQLXHOST $XMYSQLDBNAME > $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.sql
+mysqldump --user=$XMYSQLUSER --password=$XMYSQLPWD --host=$XMYSQLHOST $XMYSQLDBNAME > $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.sql
 
 # Make tar
 tar cvzf $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.tgz $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.sql
