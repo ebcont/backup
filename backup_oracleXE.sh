@@ -17,7 +17,7 @@ echo "debug3"
 XOXEBACKUPACTIVE=$(cat $XCRED | grep XOXEBACKUPACTIVE | cut -d "=" -f2)
 if [ ! $XOXEBACKUPACTIVE == "YES" ]; then
   exit 1
-  echo "oracleXE-backup is not activated in credentials
+  echo "oracleXE-backup is not activated in credentials"
 fi
 echo "debug4"
 
