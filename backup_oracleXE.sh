@@ -45,7 +45,7 @@ tar cvzf $XBACKUPPATH/$XDATE-oracleXE-$XOXEUSER.tgz $XBACKUPPATH/$XDATE-oracleXE
 rm $XBACKUPPATH/$XDATE-oracleXE-$XOXEUSER.dmp
 
 # Delete files older than 1 days
-find $XBACKUPPATH/* -mtime +1 -exec rm {} \;
+find $XBACKUPPATH/* -mtime +0 -exec rm {} \;
 
 #this file is only needed to check for monitoring if backup is working - we will check the date of the file
 touch $XBACKUPPATH/check_backup_oracleXE

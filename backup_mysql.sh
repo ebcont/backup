@@ -41,7 +41,7 @@ tar cvzf $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.tgz $XBACKUPPATH/$XDATE-mysql-$
 rm $XBACKUPPATH/$XDATE-mysql-$XMYSQLDBNAME.sql
 
 # Delete files older than 1 days
-find $XBACKUPPATH/* -mtime +1 -exec rm {} \;
+find $XBACKUPPATH/* -mtime +0 -exec rm {} \;
 
 #this file is only needed to check for monitoring if backup is working - we will check the date of the file
 touch $XBACKUPPATH/check_backup_mysql
