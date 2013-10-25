@@ -3,11 +3,8 @@
 date
 echo "begin oracleXE backup"
 
-export ORACLE_SID=XE
-
 # credentials
 XCRED="/root/bin/credentials"
-echo "debug2"
 
 if [ ! -f $XCRED ]; then
   echo "$XCRED does not exist."
@@ -27,6 +24,8 @@ XOXEORACLEHOME=$(cat $XCRED | grep XOXEORACLEHOME | cut -d "=" -f2)
 XDATE=$(date +"%Y%m%d")
 
 export ORACLE_HOME=$XOXEORACLEHOME
+export ORACLE_SID=XE
+
 XCRON=$(grep backup_oracleXE.sh /etc/crontab | wc -l)
 
 if [ $XCRON -eq 0 ]; then
@@ -35,8 +34,9 @@ fi
 
 mkdir -p $XBACKUPPATH
 
+XEXP="/bin/exp"
 # Dump database into SQL file
-exp $XOXEUSER/$XOXEPWD FILE=$XBACKUPPATH/$XDATE-oracleXE-$XOXEUSER.dmp OWNER=$XOXEUSER statistics=none
+$XOXEORACLEHOME$XEXP $XOXEUSER/$XOXEPWD FILE=$XBACKUPPATH/$XDATE-oracleXE-$XOXEUSER.dmp OWNER=$XOXEUSER statistics=none 2>&1
 
 # Make tar
 tar cvzf $XBACKUPPATH/$XDATE-oracleXE-$XOXEUSER.tgz $XBACKUPPATH/$XDATE-oracleXE-$XOXEUSER.dmp
