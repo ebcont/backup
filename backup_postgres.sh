@@ -30,7 +30,7 @@ fi
 mkdir -p $XBACKUPPATH
 
 # Dump database into SQL file
-su - postgres -c "pg_dump $XPGSQLDBNAME" > /backup/$XPGSQLDBNAME.sql
+su - postgres -c "pg_dump $XPGSQLDBNAME" > $XBACKUPPATH/$XDATE-pgsql-$XPGSQLDBNAME.sql
 
 # Make tar
 tar cvzf $XBACKUPPATH/$XDATE-pgsql-$XPGSQLDBNAME.tgz $XBACKUPPATH/$XDATE-pgsql-$XPGSQLDBNAME.sql
