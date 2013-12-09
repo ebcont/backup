@@ -16,7 +16,7 @@ if [ ! $XLDAPBACKUPACTIVE == "YES" ]; then
   exit 1
 fi
 
-XLDAPBASE=$(cat $XCRED | grep XDAPBASE | cut -d "=" -f2-)
+XLDAPBASE=$(cat $XCRED | grep XLDAPBASE | cut -d "=" -f2-)
 XBACKUPPATH=$(cat $XCRED | grep XBACKUPPATH | cut -d "=" -f2-)
 
 XDATE=$(date +"%Y%m%d")
