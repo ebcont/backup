@@ -18,7 +18,14 @@ fi
 
 XPGSQLDBNAME=$1
 XBACKUPPATH=$(cat $XCRED | grep XBACKUPPATH | cut -d "=" -f2)
+
 XDATE=$(date +"%Y%m%d")
+
+
+if [ $XBACKUPPATH == "/" ]; then
+	echo "Big mistake!"
+	exit 1
+fi
 
 mkdir -p $XBACKUPPATH
 
