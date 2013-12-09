@@ -33,7 +33,7 @@ mkdir -p $XBACKUPPATH
 su - postgres -c "pg_dump $XPGSQLDBNAME" > /backup/$XPGSQLDBNAME.sql
 
 # Make tar
-tar cvzf $XBACKUPPATH/$XDATE-pgsql-$PGYSQLDBNAME.tgz $XBACKUPPATH/$XDATE-pgsql-$XPGSQLDBNAME.sql
+tar cvzf $XBACKUPPATH/$XDATE-pgsql-$XPGSQLDBNAME.tgz $XBACKUPPATH/$XDATE-pgsql-$XPGSQLDBNAME.sql
 
 # Delete SQL-file
 rm $XBACKUPPATH/$XDATE-pgsql-$XPGSQLDBNAME.sql
